@@ -13,6 +13,9 @@ ctx.lineTo(30, 460);
 ctx.lineTo(500, 460); 
 ctx.stroke(); 
 
+function addGraph(){
+
+}
 
 ctx.fillStyle = "black";
 for(let i = 0; i < 6; i++) { 
@@ -23,12 +26,15 @@ for(let i = 0; i < 6; i++) {
     ctx.stroke(); 
 }
  
-let labels = ["graph1", "graph2", "graph3", "graph4"]; 
+let labels = []; 
+// let labels = ["graph1", "graph2", "graph3", "graph4"];
+let addLabel = labels.push("graph1", "graph2", "graph3", "graph4")
  
 for(var i=0; i<4; i++) { 
     ctx.fillText(labels[i], 50+ i*100, 475); 
 }
 let data = [ 10, 53, 39, 54]; 
+// let data = [ 10, 53, 39, 54]; 
  
 ctx.fillStyle = "blue"; 
 for(var i=0; i<data.length; i++) { 
@@ -70,13 +76,19 @@ console.log(arr3)
 
 
   let card = `
-  <div class="card">
+  <div id="card">
           <h4>Brand name: ${el.brandname}</h4>
           
           </div>
 `;
+
+let graph = ""
 console.log(card)
       main.innerHTML += card;
+      let crdl = document.getElementById("card")
+crdl.draggable = true
+crdl.ondragstart = () => console.log("start")
+crdl.ondragend = () => console.log("end")
 
 }
 
